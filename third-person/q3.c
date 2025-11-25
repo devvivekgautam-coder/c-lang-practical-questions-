@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int findOdd();
+int findOdd(int arry[], int size);
 
 int main () {
     int size;
 
-    printf("Enter any number : ");
+    printf("Enter Array size : ");
     scanf("%d", &size);
 
     int arry[size];
@@ -15,17 +15,21 @@ int main () {
         scanf("%d", &arry[i]);
     }
 
-    int odd = findOdd(odd, arry);
+    int odd = findOdd(arry, size);
 
-    printf("%d is Odd", odd);
+    printf("Odd is : %d", odd);
 
     return 0;
 }
 
-int findOdd(int arry[], int i) {
+int findOdd(int arry[], int size) {
     int odd = 0;
-    if (arry[i] % 2 == 0) {
+
+    for (int i = 0; i < size; i++) {
+        if (arry[i] % 2 != 0) {
         odd++;
     }
+    }
+
     return odd;
 }

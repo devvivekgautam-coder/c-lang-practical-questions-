@@ -3,21 +3,23 @@
 #include <stdio.h>
 
 int main () {
-    int size, i, even = 0;
+    int size, even = 0;
 
     printf("Enter the size of array : ");
     scanf("%d", &size);
 
     int array[size];
-    int eve = *array;
+    int *eve = array;
 
-    for (i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         printf("Enter the element of array : ");
-        scanf("%d", &array[i]);
+        scanf("%d", (eve + i));
     }
 
-    if (array[i] % 2 != 0) {
+    for (int i = 0; i < size; i++) {
+        if (*(eve + i) % 2 == 0) {
         even++;
+    }
     }
 
     printf("Even : %d", even);
