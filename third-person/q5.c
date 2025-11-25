@@ -2,7 +2,7 @@
 
 int main () {
     for (int i = 10; i >= 6; i--) {
-        for (int s = i; s < 4; s--) {
+        for (int s = i; s > 6; s--) {
             printf("_ ");
         }
         for (int j = i; j <= 10; j++) {
